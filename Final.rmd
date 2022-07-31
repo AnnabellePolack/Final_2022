@@ -1,12 +1,12 @@
 ---
 title: "Covid91 vaccine study Final2022"
-author: "Put your name here!"
+author: "Annabelle Polack"
 output: 
   html_document:
     number_sections: true
     toc: true
     toc_depth: 5
-date: "`r Sys.Date()`" 
+date: "Summer 2022" 
 ---
 
 ```{r include=FALSE,echo=FALSE}
@@ -24,15 +24,62 @@ mutate(across(where(is.character), as.factor))
 
 A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
+```{r include=FALSE,echo=FALSE}
+Males<- group_by(FinalData, sex="M");
+Females<- group_by(FinalData, sex="F")
+lgbtqm<- filter(Males, LGBTQ=="gay")
+lgbtqf<- filter(Females, LGBTQ=="gay")
+drugiesm<- filter(Males, DrugUser=="yes")
+drugiesf<- filter(Females, DrugUser=="yes")
+```
+
 ## Males
+
+
+## Bar Graph
+
+
+## Numerical
+
+
+## Inferential 
 
 
 ## Females
 
 
+## Bar Graph
+
+
+## Numerical
+
+
+## Inferential
+
+
 ## LGBTQ
 
 
+## Bar Graph
+
+
+## Numerical
+
+
+## Inferential
+
 
 ## Druggies
+
+
+## Bar Graph
+
+
+## Numerical
+
+
+## Inferential
+
+
+
 

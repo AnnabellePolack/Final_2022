@@ -67,14 +67,24 @@ The most important information: among males who contracted covid19 67.78% of the
 ```{r}
 chisq.test(table1)
 chisqtestGC(table1)
-fisher.test(table1)
+malefisher<-fisher.test(table1)
+malefisher
 ```
 
 The observed counts table shows the actual number of males who got covid and who didn't. Also the p-value is small meaning there is a statistical difference in the effect of the placebo and vaccine among males in preventing the infection. Males who took the placebo are about 2 times more likely to contract covid than those who took the vaccine based on the odds ratio value. 
 
 #### Efficacy of vaccine for males 
 
+```{r}
+EfficacyMales<- ((2.092161/(1+2.092161)*100) )
+malefisherlow<- malefisher$conf.int[1]
+malefisherhigh<- malefisher$conf.int[2]
+EfficacyMaleslow<-(malefisherlow/(1+malefisherlow)*100)
+EfficacyMaleshigh<-(malefisherhigh/(1+malefisherhigh)*100)
+EfficacyMales
+```
 
+Estimated efficacy of the vaccine among males. The 95% confidence interval of the vaccine efficacy among males from `r EfficacyMaleslow` to `r EfficacyMaleshigh`
 
 ## Females
 

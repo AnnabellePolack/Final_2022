@@ -20,65 +20,70 @@ FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
 ```
 
+```{r include=FALSE,echo=FALSE}
+Males<- filter(FinalData, sex=="M");
+Females<- filter(FinalData, sex=="F")
+LGBTQ<- filter(FinalData, LGBTQ=="gay")
+DrugUsers<- filter(FinalData, DrugUser=="yes")
+```
+
 # Introduction
 
 A new  preventative vaccine (covid91) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
-```{r include=FALSE,echo=FALSE}
-Males<- group_by(FinalData, sex="M");
-Females<- group_by(FinalData, sex="F")
-lgbtqm<- filter(Males, LGBTQ=="gay")
-lgbtqf<- filter(Females, LGBTQ=="gay")
-drugiesm<- filter(Males, DrugUser=="yes")
-drugiesf<- filter(Females, DrugUser=="yes")
-```
-
 ## Males
 
+### Descriptive Results
 
-## Bar Graph
+#### Graphical Descriptive Results
 
+#### Numerical Descriptive Results 
 
-## Numerical
+#### Inferential Results 
 
+#### Efficacy of vaccine for males 
 
-## Inferential 
 
 
 ## Females
 
+### Descriptive Results
 
-## Bar Graph
+#### Graphical Descriptive Results
 
+#### Numerical Descriptive Results 
 
-## Numerical
+#### Inferential Results 
 
+#### Efficacy of vaccine for females
 
-## Inferential
 
 
 ## LGBTQ
 
+### Descriptive Results
 
-## Bar Graph
+#### Graphical Descriptive Results
 
+#### Numerical Descriptive Results 
 
-## Numerical
+#### Inferential Results 
 
+#### Efficacy of vaccine for lgbtq
 
-## Inferential
 
 
 ## Druggies
 
+### Descriptive Results
 
-## Bar Graph
+#### Graphical Descriptive Results
 
+#### Numerical Descriptive Results 
 
-## Numerical
+#### Inferential Results 
 
-
-## Inferential
+#### Efficacy of vaccine for druggies
 
 
 

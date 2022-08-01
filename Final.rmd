@@ -109,7 +109,13 @@ The bar plots above show graphical descriptive summaries of the effects of two t
 
 #### Graphical Descriptive Results
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=Females)
+rowPerc(table1)
+colPerc(table1)
+```
 
+The most important information: among females who contracted covid19 58.89% of them took the placebo, while 41.11% of them took the vaccine. A majority of the females who got covid took the placebo, therefore the vaccine seems to be working among the females.
 
 #### Numerical Descriptive Results 
 

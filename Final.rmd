@@ -33,7 +33,7 @@ A new  preventative vaccine (covid91) is under test in clinical trials. Given th
 
 ## Males
 
-### Descriptive Results
+### Graphical Descriptive Results
 
 ```{r}
 dd2 <- Males %>% group_by(infected,treatment) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
@@ -50,11 +50,17 @@ basicCC <- ggplot(dd2,aes(x=infected,y=prcnt*100,fill=treatment))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-
-
-#### Graphical Descriptive Results
+The bar plots above show graphical descriptive summaries of the effects of two treatments (covid19 vaccine and placebo) on males. At first glance, the vaccine appears to be working among males as the two plots show that more males who took the placebo contracted the disease. 
 
 #### Numerical Descriptive Results 
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=Males)
+rowPerc(table1)
+colPerc(table1)
+```
+
+The most important information: among males who contracted covid19 67.78% of them took the placebo, while 32.22% of them took the vaccine. A majority of the males who got covid took the placebo, therefore the vaccine seems to be working among the males. 
 
 #### Inferential Results 
 
